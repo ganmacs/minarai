@@ -4,19 +4,9 @@ TODO: Write a gem description
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
 ```ruby
-gem 'minarai'
+$ gem install minarai
 ```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install minarai
 
 ## Usage
 
