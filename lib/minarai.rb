@@ -1,4 +1,4 @@
-require "minarai/version"
+require 'minarai/version'
 
 module Minarai
   # Your code goes here...
