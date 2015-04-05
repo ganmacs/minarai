@@ -1,0 +1,9 @@
+- name: clone codic-clojure
+  type: git
+  repo: https://github.com/ganmacs/codic-clojure.git
+  dest: codic-clojure
+
+- name: clone dot_emacs
+  type: git
+  repo: https://github.com/ganmacs/emacs.d.git
+  dest: emacs
