@@ -1,4 +1,5 @@
 require 'minarai/action_builder'
+require 'minarai/runner'
 
 module Minarai
   class Recipe
@@ -6,10 +7,14 @@ module Minarai
       @loaded_data = loaded_data
     end
 
-    def resouces
-      @resouces ||= @loaded_data.map do |d|
+    def actions
+      @actions ||= @loaded_data.map do |d|
         Minarai::ActionBuilder.new(d).build
       end
+    end
+
+    def runner
+      @runner ||= Minarai::Runner.new(actions)
     end
   end
 end

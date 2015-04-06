@@ -1,6 +1,6 @@
 require 'slop'
-require 'minarai/actions/git'
 require 'minarai/recipe_loader'
+require 'minarai/recipe'
 
 module Minarai
   class Command
@@ -9,19 +9,13 @@ module Minarai
     end
 
     def call
-      recipe.resouces.each do |resouce|
-        resouce.call
-      end
+      recipe.runner.run
     end
 
     private
 
     def recipe
       @recipe ||= Minarai::RecipeLoader.new(recipe_path).load
-    end
-
-    def git
-      Minarai::Actions::Git.new.call
     end
 
     def recipe_path

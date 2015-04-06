@@ -1,4 +1,5 @@
 require 'active_support/core_ext/string/inflections'
+require 'minarai/actions/git'
 
 module Minarai
   class ActionBuilder
@@ -14,7 +15,7 @@ module Minarai
 
     def action_class
       if known_action_type?
-        Actions.const_get(action_class_name, false)
+        Minarai::Actions.const_get(action_class_name, false)
       else
         # @TODO something error
         'error'
@@ -22,7 +23,7 @@ module Minarai
     end
 
     def known_action_type?
-      Actions.constants.include?(action_class_name.to_sym)
+      Minarai::Actions.constants.include?(action_class_name.to_sym)
     end
 
     def action_class_name
