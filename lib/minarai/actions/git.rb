@@ -3,8 +3,7 @@ require 'minarai/actions/base'
 module Minarai
   module Actions
     class Git < Base
-      attribute :repo, required: true
-      attribute :dest, required: true
+      attribute :repository, required: true
 
       def run
         clone
@@ -22,7 +21,7 @@ module Minarai
       end
 
       def existed?
-        check_specific_command(:check_file_is_directory, dest)
+        check_specific_command(:check_file_is_directory, destination)
       end
 
       def has_git?
@@ -30,7 +29,7 @@ module Minarai
       end
 
       def name
-        super || "clone #{repo} to #{dest}"
+        super || "clone #{repository} to #{destination}"
       end
     end
   end
