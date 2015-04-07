@@ -20,7 +20,7 @@ module Minarai
 
       def install
         puts "install #{name} #{install_cmd}"
-        # run_command install_cmd
+        # run_specific_command(:install_package, item)
       end
 
       def runnable?
@@ -28,19 +28,11 @@ module Minarai
       end
 
       def installed?
-        check_command installed
+        check_specific_command(:check_package_is_installed, item)
       end
 
       def has_homebrew?
         check_command 'which brew'
-      end
-
-      def installed
-        get_command(:check_package_is_installed, item)
-      end
-
-      def install_cmd
-        get_command(:install_package, item)
       end
     end
   end

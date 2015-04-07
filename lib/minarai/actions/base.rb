@@ -53,8 +53,13 @@ module Minarai
         run_command(*args).success?
       end
 
-      def get_command(method, *args)
-        backend.command.get(method, *args)
+      # なまえ
+      def run_specific_command(method, *args)
+        run_command(backend.command.get(method, *args))
+      end
+
+      def check_specific_command(method, *args)
+        run_specific_command(method, *args).success?
       end
     end
   end

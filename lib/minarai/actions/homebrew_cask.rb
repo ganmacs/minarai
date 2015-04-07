@@ -20,7 +20,7 @@ module Minarai
 
       def install
         puts "install #{name} #{install_cmd}"
-        run_command install_cmd
+        # run_command "brew cask install #{item}"
       end
 
       def runnable?
@@ -28,19 +28,11 @@ module Minarai
       end
 
       def installed?
-        check_command installed
+        check_command "/usr/local/bin/brew cask list -1 | grep -E '^#{item}$'"
       end
 
       def has_homebrew?
         check_command 'which brew-cask'
-      end
-
-      def installed
-        "/usr/local/bin/brew cask list -1 | grep -E '^#{item}$'"
-      end
-
-      def install_cmd
-        run_command("brew cask install #{item}")
       end
     end
   end

@@ -24,12 +24,12 @@ module Minarai
       end
 
       def clone
-        p 'clone'
+        puts 'clone'
         # run_command("git clone #{repo} #{dest}")
       end
 
       def existed?
-        check_command existed_file
+        check_specific_command(:check_file_is_directory, dest)
       end
 
       def has_git?
@@ -38,10 +38,6 @@ module Minarai
 
       def name
         super || "clone #{repo} to #{dest}"
-      end
-
-      def existed_file
-        get_command(:check_file_is_directory, dest)
       end
     end
   end
