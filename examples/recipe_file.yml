@@ -1,0 +1,11 @@
+- name: copy recipe to recipe3
+  type: file
+  source: ./examples/recipe_file.yml
+  destination: ./examples/recipe_file3.yml
+
+- name: copy recipe to recipe4
+  type: file
+  group: staff
+  owner: ganmacs
+  source: ./examples/recipe_file.yml
+  destination: ./examples/recipe_file4.yml

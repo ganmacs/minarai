@@ -1,5 +1,7 @@
 require 'active_model'
 require 'validator/required_validator.rb'
+require 'validator/type_validator.rb'
+require 'validator/readable_validator.rb'
 
 module Minarai
   module Actions
@@ -29,6 +31,7 @@ module Minarai
           puts "[DONE] #{name}"
         else
           puts "[FAIL] #{name}"
+          puts validation_error_messages
         end
       end
 
