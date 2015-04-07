@@ -6,13 +6,7 @@ module Minarai
       attribute :item, required: true
 
       def run
-        puts "[START] #{name}..."
-        if runnable?
-          install
-          puts "[DONE] #{name}"
-        else
-          puts "[FAIL] #{name}"
-        end
+        install
       end
 
       private

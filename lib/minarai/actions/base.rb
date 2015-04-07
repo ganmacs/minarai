@@ -23,12 +23,20 @@ module Minarai
       end
 
       def call
-        run
+        puts "[START] #{name}..."
+        if runnable?
+          run
+          puts "[DONE] #{name}"
+        else
+          puts "[FAIL] #{name}"
+        end
       end
 
       def run
         raise NotImplementedError
       end
+
+      private
 
       def runnable?
         raise NotImplementedError

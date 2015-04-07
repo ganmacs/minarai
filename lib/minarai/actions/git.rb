@@ -7,13 +7,7 @@ module Minarai
       attribute :dest, required: true
 
       def run
-        puts "[START] #{name}..."
-        if runnable?
-          clone
-          puts "[DONE] #{name}"
-        else
-          puts "[FAIL] #{name}"
-        end
+        clone
       end
 
       private
