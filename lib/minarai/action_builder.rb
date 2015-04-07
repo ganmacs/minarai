@@ -1,5 +1,6 @@
 require 'active_support/core_ext/string/inflections'
 require 'minarai/actions/git'
+require 'minarai/actions/homebrew'
 
 module Minarai
   class ActionBuilder

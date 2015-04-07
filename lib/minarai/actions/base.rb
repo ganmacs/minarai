@@ -33,6 +33,14 @@ module Minarai
         raise NotImplementedError
       end
 
+      def has_command?
+        raise NotImplementedError
+      end
+
+      def validated?
+        validate
+      end
+
       def name
         @attributes['name']
       end

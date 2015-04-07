@@ -17,11 +17,16 @@ module Minarai
         end
       end
 
+      private
+
       def runnable?
-        has_git? && validate? && existed?
+        has_git? && validate? && !existed?
       end
 
-      private
+      def clone
+        p 'clone'
+        # run_command("git clone #{repo} #{dest}")
+      end
 
       def existed?
         check_command existed_file
@@ -33,14 +38,6 @@ module Minarai
 
       def name
         super || "clone #{repo} to #{dest}"
-      end
-
-      def clone
-        run_command("git clone #{repo} #{dest}")
-      end
-
-      def validate?
-        validate
       end
 
       def existed_file

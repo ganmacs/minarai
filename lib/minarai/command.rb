@@ -1,6 +1,5 @@
 require 'slop'
 require 'minarai/recipe_loader'
-require 'minarai/recipe'
 
 module Minarai
   class Command
