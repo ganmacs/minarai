@@ -1,0 +1,4 @@
+- name: link recipe to recipe3
+  type: link
+  source: ./examples/recipe_file.yml
+  destination: ./examples/recipe_file3.yml
