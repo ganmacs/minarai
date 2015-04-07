@@ -8,7 +8,11 @@ module Minarai
     end
 
     def call
-      recipe.runner.run
+      if recipe.valid?
+        recipe.runner.run
+      else
+        puts recipe.errors.map(&:to_s)
+      end
     end
 
     private

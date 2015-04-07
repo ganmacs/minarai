@@ -36,6 +36,10 @@ module Minarai
         raise NotImplementedError
       end
 
+      def error_messages
+        validation_error_messages
+      end
+
       private
 
       def runnable?
@@ -48,6 +52,13 @@ module Minarai
 
       def validated?
         validate
+      end
+
+      def validation_error_messages
+        validate                # @TODO want to remove
+        errors.map do |attribute, error_message|
+          "#{attribute} #{error_message}"
+        end
       end
 
       def name

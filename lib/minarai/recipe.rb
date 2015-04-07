@@ -16,5 +16,13 @@ module Minarai
     def runner
       @runner ||= Minarai::Runner.new(actions)
     end
+
+    def valid?
+      errors.empty?
+    end
+
+    def errors
+      @errors ||= actions.flat_map(&:error_messages)
+    end
   end
 end
