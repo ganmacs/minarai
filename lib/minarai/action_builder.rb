@@ -1,5 +1,6 @@
 require 'active_support/core_ext/string/inflections'
 require 'minarai/actions/git'
+require 'minarai/actions/file'
 require 'minarai/actions/homebrew'
 require 'minarai/actions/homebrew_cask'
 

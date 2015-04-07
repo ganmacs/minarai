@@ -25,14 +25,20 @@ module Minarai
       end
 
       def call
+        puts '***************************'
         puts "[START] #{name}..."
-        if runnable?
-          run
-          puts "[DONE] #{name}"
+
+
+        if complete?
+          puts "[SKIP] #{name}"
         else
-          puts "[FAIL] #{name}"
-          puts validation_error_messages
+          run
+          status = complete? ? 'DONE' : 'FAIL'
+          puts "[#{status}] #{name}"
         end
+
+        puts '***************************'
+        puts
       end
 
       def run
@@ -45,11 +51,7 @@ module Minarai
 
       private
 
-      def runnable?
-        raise NotImplementedError
-      end
-
-      def has_command?
+      def complete?
         raise NotImplementedError
       end
 

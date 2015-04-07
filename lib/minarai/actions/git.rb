@@ -4,6 +4,7 @@ module Minarai
   module Actions
     class Git < Base
       attribute :repository, required: true
+      attribute :destination, required: true
 
       def run
         clone
@@ -11,13 +12,13 @@ module Minarai
 
       private
 
-      def runnable?
-        has_git? && validated? && !existed?
+      def complete?
+        has_git? && existed?
       end
 
       def clone
         puts 'clone'
-        # run_command("git clone #{repo} #{dest}")
+        # run_command("git clone #{repository} #{destination}")
       end
 
       def existed?

@@ -1,3 +1,6 @@
 - name: brew install seil
   type: homebrew_cask
   item: seil
+- name: brew install licecap
+  type: homebrew_cask
+  item: licecap

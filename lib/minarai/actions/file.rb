@@ -22,8 +22,8 @@ module Minarai
         # run_specific_command(:copy_file, source, destination)
       end
 
-      def runnable?
-        !existed_file? && !same_content?
+      def complete?
+        existed_file? && same_content?
       end
 
       def existed_file?
@@ -59,7 +59,7 @@ module Minarai
       end
 
       def name
-        super || "copy #{repo} to #{dest}"
+        super || "copy #{repository} to #{destination}"
       end
     end
   end

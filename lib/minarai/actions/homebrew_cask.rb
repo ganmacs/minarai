@@ -12,12 +12,12 @@ module Minarai
       private
 
       def install
-        puts "install #{name} #{install_cmd}"
+        puts name
         # run_command "brew cask install #{item}"
       end
 
-      def runnable?
-        has_homebrew? && validated? && !installed?
+      def complete?
+        has_homebrew? && installed?
       end
 
       def installed?
@@ -26,6 +26,10 @@ module Minarai
 
       def has_homebrew?
         check_command 'which brew-cask'
+      end
+
+      def name
+        super || "brew cask install #{item}"
       end
     end
   end

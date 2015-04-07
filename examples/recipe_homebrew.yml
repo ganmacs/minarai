@@ -1,3 +1,6 @@
 - name: brew install peco
   type: homebrew
   item: peco
+- name: brew install jq
+  type: homebrew
+  item: jq
