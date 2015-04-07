@@ -13,7 +13,7 @@ module Minarai
       private
 
       def runnable?
-        has_git? && validate? && !existed?
+        has_git? && validated? && !existed?
       end
 
       def clone
