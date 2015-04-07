@@ -26,6 +26,9 @@ Style/SignalException:
 Style/DoubleNegation:
   Enabled: false
 
+Style/GuardClause:
+  Enabled: false
+
 Style/PredicateName:
   NamePrefixBlacklist:
     - is_
