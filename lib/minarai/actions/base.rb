@@ -1,4 +1,5 @@
 require 'active_model'
+require 'validator/required_validator.rb'
 
 module Minarai
   module Actions
