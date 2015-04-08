@@ -1,4 +1,5 @@
 require 'minarai/actions/base'
+require 'minarai/errors/attribute_validation_error'
 
 module Minarai
   module Actions
@@ -10,11 +11,8 @@ module Minarai
       attribute :state, type: String, default: ''
 
       def call
-        if readable_source?
-          super
-        else
-          puts "[ERROR] #{source} is not readable file"
-        end
+        abort_with_runtime_error unless runnable?
+        super
       end
 
       def run
@@ -28,6 +26,18 @@ module Minarai
       def copy
         puts 'copy'
         # run_specific_command(:copy_file, source, destination)
+      end
+
+      def runnable?
+        readable_source?
+      end
+
+      def abort_with_runtime_error
+        abort "[ERROR] #{runtime_error}"
+      end
+
+      def runtime_error
+        Minarai::Errors::AttributeValidationError.new('source', 'is not readable file', name)
       end
 
       def complete?
