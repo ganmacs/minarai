@@ -4,10 +4,18 @@ module Minarai
   module Actions
     class File < Base
       attribute :destination, required: true, type: String
-      attribute :source, required: true, type: String, readable: true
+      attribute :source, required: true, type: String
       attribute :owner, type: String
       attribute :group, type: String
       attribute :state, type: String, default: ''
+
+      def call
+        if readable_source?
+          super
+        else
+          puts "[ERROR] #{source} is not readable file"
+        end
+      end
 
       def run
         copy
@@ -24,6 +32,10 @@ module Minarai
 
       def complete?
         existed_file? && same_content?
+      end
+
+      def raeadable_source?
+        !source.nil? && ::File.readable?(source)
       end
 
       def existed_file?

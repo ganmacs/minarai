@@ -4,7 +4,15 @@ module Minarai
   module Actions
     class Link < Base
       attribute :destination, required: true, type: String
-      attribute :source, required: true, type: String, readable: true
+      attribute :source, required: true, type: String
+
+      def call
+        if readable_source?
+          super
+        else
+          puts "[ERROR] #{source} is not readable file"
+        end
+      end
 
       def run
         link
@@ -19,6 +27,10 @@ module Minarai
 
       def complete?
         existed_file?
+      end
+
+      def readable_source?
+        !source.nil? && ::File.readable?(source)
       end
 
       def existed_file?

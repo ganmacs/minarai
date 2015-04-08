@@ -1,7 +1,6 @@
 require 'active_model'
 require 'validator/required_validator'
 require 'validator/type_validator'
-require 'validator/readable_validator'
 require 'minarai/errors/attribute_validation_error'
 
 module Minarai

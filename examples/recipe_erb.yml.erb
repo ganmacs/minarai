@@ -6,3 +6,8 @@
   type: git
   repository: <%= remote_dotfile_repo %>
   destination: <%= dotfile_path %>
+
+- name: link dotfile to hgoe
+  type: link
+  source: <%= vim_config_in_dotfile %>
+  destination: <%= dot_vim_path %>
