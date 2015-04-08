@@ -1,7 +1,8 @@
 require 'active_model'
-require 'validator/required_validator.rb'
-require 'validator/type_validator.rb'
-require 'validator/readable_validator.rb'
+require 'validator/required_validator'
+require 'validator/type_validator'
+require 'validator/readable_validator'
+require 'minarai/errors/attribute_validation_error'
 
 module Minarai
   module Actions
@@ -60,9 +61,9 @@ module Minarai
       end
 
       def validation_error_messages
-        validate                # @TODO want to remove
+        validate
         errors.map do |attribute, error_message|
-          "#{attribute} #{error_message}"
+          Minarai::Errors::AttributeValidationError.new(attribute, error_message, name)
         end
       end
 

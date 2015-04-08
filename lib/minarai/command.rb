@@ -11,7 +11,7 @@ module Minarai
       if recipe.valid?
         recipe.runner.run
       else
-        puts recipe.errors.map(&:to_s)
+        puts recipe.errors
       end
     end
 
@@ -22,7 +22,7 @@ module Minarai
     end
 
     def recipe_path
-      slop_options['recipe'] || 'default.yml' # @TODO fix deafult path
+      slop_options['recipe']
     end
 
     def slop_options

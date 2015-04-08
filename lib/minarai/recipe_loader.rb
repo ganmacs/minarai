@@ -18,7 +18,7 @@ module Minarai
     end
 
     def valid_recipe_path?
-      pathname.exist?
+      !pathname.nil? && pathname.exist?
     end
 
     def pathname

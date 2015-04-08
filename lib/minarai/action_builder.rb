@@ -4,6 +4,7 @@ require 'minarai/actions/file'
 require 'minarai/actions/homebrew'
 require 'minarai/actions/homebrew_cask'
 require 'minarai/actions/link'
+require 'minarai/actions/unknow'
 
 module Minarai
   class ActionBuilder
@@ -21,17 +22,15 @@ module Minarai
       if known_action_type?
         Minarai::Actions.const_get(action_class_name, false)
       else
-        # @TODO something error
-        'error'
+        Minarai::Actions::Unknown
       end
     end
 
     def known_action_type?
-      Minarai::Actions.constants.include?(action_class_name.to_sym)
+      has_type? && Minarai::Actions.constants.include?(action_class_name.to_sym)
     end
 
     def action_class_name
-      raise 'type attirbute is required' unless has_type?
       type.camelize
     end
 

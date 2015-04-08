@@ -22,7 +22,7 @@ module Minarai
     end
 
     def errors
-      @errors ||= actions.flat_map(&:error_messages)
+      @errors ||= actions.flat_map(&:error_messages).map(&:to_s)
     end
   end
 end
