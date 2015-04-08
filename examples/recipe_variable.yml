@@ -1,0 +1,4 @@
+remote_dotfile_repo: https://github.com/ganmacs/dotfiles.git
+dotfile_path: /User/ganmacs/tmp/dotfile
+vim_config_in_dotfile: /User/ganmacs/tmp/dotfile/vim
+dot_vim_path: /User/ganmacs/tmp/.vim

@@ -1,0 +1,8 @@
+- name: install vim
+  type: homebrew
+  item: vim
+
+- name: clone dotfile
+  type: git
+  repository: <%= remote_dotfile_repo %>
+  destination: <%= dotfile_path %>

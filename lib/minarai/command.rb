@@ -1,5 +1,5 @@
 require 'slop'
-require 'minarai/recipe_loader'
+require 'minarai/loaders/recipe_loader'
 
 module Minarai
   class Command
@@ -19,16 +19,21 @@ module Minarai
     end
 
     def recipe
-      @recipe ||= Minarai::RecipeLoader.new(recipe_path).load
+      @recipe ||= Minarai::Loaders::RecipeLoader.new(recipe_path, variable_path: variable_path).load
     end
 
     def recipe_path
-      slop_options['recipe']
+      slop_options.arguments[0] or raise 'recipe is required'
+    end
+
+    def variable_path
+      slop_options[:variables]
     end
 
     def slop_options
       @slop_options ||= Slop.parse(@args, suppress_errors: true) do |option|
-        option.string('-r', '--recipe', 'require recipe file')
+        # option.string('-r', '--recipe', 'require recipe file')
+        option.string '-v', '--variables', 'variable file for erb recipe file'
       end
     end
   end
