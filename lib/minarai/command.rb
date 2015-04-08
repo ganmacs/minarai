@@ -23,7 +23,7 @@ module Minarai
     end
 
     def recipe_path
-      slop_options.arguments[0] or raise 'recipe is required'
+      slop_options.arguments[0] or raise Minarai::Errors::MissingRecipePathError
     end
 
     def variable_path
