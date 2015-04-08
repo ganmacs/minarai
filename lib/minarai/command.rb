@@ -32,7 +32,6 @@ module Minarai
 
     def slop_options
       @slop_options ||= Slop.parse(@args, suppress_errors: true) do |option|
-        # option.string('-r', '--recipe', 'require recipe file')
         option.string '-v', '--variables', 'variable file for erb recipe file'
       end
     end
