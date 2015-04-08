@@ -8,7 +8,7 @@ module Minarai
       end
 
       def to_s
-        "[error] `type` is required @ #{@name}"
+        "`type` is required @ #{@name}"
       end
     end
   end

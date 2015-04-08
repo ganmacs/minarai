@@ -8,14 +8,15 @@ module Minarai
     end
 
     def call
-      if recipe.valid?
-        recipe.runner.run
-      else
-        puts recipe.errors
-      end
+      abort_with_error_message unless recipe.valid?
+      recipe.runner.run
     end
 
     private
+
+    def abort_with_error_message
+      abort recipe.errors.map { |error| "Error: #{error}" }.join("\n")
+    end
 
     def recipe
       @recipe ||= Minarai::RecipeLoader.new(recipe_path).load

@@ -10,7 +10,7 @@ module Minarai
       end
 
       def to_s
-        "[error] `#{@attribute}` #{@error_message} @ #{@name}"
+        "`#{@attribute}` #{@error_message} @ #{@name}"
       end
     end
   end
