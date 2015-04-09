@@ -46,7 +46,7 @@ module Minarai
       end
       alias_method :skip, :info
       alias_method :done, :info
-      alias_method :fail, :error
+      alias_method :fail, :warn
 
       def logger
         @logger ||= create_logger

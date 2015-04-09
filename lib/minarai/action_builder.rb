@@ -6,6 +6,7 @@ require 'minarai/actions/homebrew_cask'
 require 'minarai/actions/link'
 require 'minarai/actions/unknow'
 require 'minarai/actions/directory'
+require 'minarai/actions/url_get'
 
 module Minarai
   class ActionBuilder

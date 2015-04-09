@@ -1,0 +1,4 @@
+- name: get emacs to exmple/emacs
+  type: url_get
+  source: http://ftp.gnu.org/gnu/emacs/emacs-24.4.tar.gz
+  destination: ./examples/emacs.tar.gz
