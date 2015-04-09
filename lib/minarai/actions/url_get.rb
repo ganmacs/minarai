@@ -13,8 +13,7 @@ module Minarai
       private
 
       def url_get
-        p "curl -O \"#{source}\" #{destination}"
-        # run_command("curl -o #{destination} #{source}")
+        run_command("curl -o #{destination} #{source}")
       end
 
       def complete?

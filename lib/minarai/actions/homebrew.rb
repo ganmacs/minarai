@@ -12,8 +12,7 @@ module Minarai
       private
 
       def install
-        puts name
-        # run_specific_command(:install_package, item)
+        run_specific_command(:install_package, item)
       end
 
       def complete?

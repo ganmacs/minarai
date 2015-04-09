@@ -16,7 +16,6 @@ module Minarai
       private
 
       def create
-        # puts 'create'
         run_specific_command(:create_file_as_directory, destination)
       end
 

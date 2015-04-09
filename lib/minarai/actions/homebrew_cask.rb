@@ -12,8 +12,7 @@ module Minarai
       private
 
       def install
-        puts name
-        # run_command "brew cask install #{item}"
+        run_command "brew cask install #{item}"
       end
 
       def complete?

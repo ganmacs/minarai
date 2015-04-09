@@ -17,8 +17,7 @@ module Minarai
       end
 
       def clone
-        puts 'clone'
-        # run_command("git clone #{repository} #{destination}")
+        run_command("git clone #{repository} #{destination}")
       end
 
       def existed?

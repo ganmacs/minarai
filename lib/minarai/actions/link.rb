@@ -18,8 +18,7 @@ module Minarai
       private
 
       def link
-        puts 'link'
-        # run_specific_command(:link_file_to, destination, source)
+        run_specific_command(:link_file_to, destination, source)
       end
 
       def complete?

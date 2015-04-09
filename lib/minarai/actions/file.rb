@@ -22,8 +22,7 @@ module Minarai
       private
 
       def copy
-        puts 'copy'
-        # run_specific_command(:copy_file, source, destination)
+        run_specific_command(:copy_file, source, destination)
       end
 
       def runnable?
