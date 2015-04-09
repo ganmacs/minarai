@@ -29,6 +29,12 @@ Style/DoubleNegation:
 Style/GuardClause:
   Enabled: false
 
+Style/PercentLiteralDelimiters:
+  Enabled: false
+
+RegexpLiteral:
+  MaxSlashes: 0
+
 Style/AndOr:
   Enabled: false
 
