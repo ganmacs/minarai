@@ -7,8 +7,8 @@ Gem::Specification.new do |spec|
   spec.version       = Minarai::VERSION
   spec.authors       = ['ganmacs']
   spec.email         = ['ganmacs@gmail.com']
-  spec.summary       = 'minarai tool'
-  spec.homepage      = ''
+  spec.summary       = 'Minarai Configuration Tool'
+  spec.homepage      = 'https://github.com/ganmacs/minarai'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -16,15 +16,15 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'activesupport'
-  spec.add_dependency 'activemodel'
-  spec.add_dependency 'specinfra'
-  spec.add_dependency 'hashie'
+  spec.add_dependency 'activesupport', '~> 4.2.1'
+  spec.add_dependency 'activemodel', '~> 4.2.0'
+  spec.add_dependency 'specinfra', '~> 2.28.0'
+  spec.add_dependency 'hashie', '~> 3.4.0'
   spec.add_dependency 'slop', '~> 4.0.0'
-  spec.add_dependency 'ansi'
+  spec.add_dependency 'ansi', '~> 1.5.0'
 
   spec.add_development_dependency 'bundler', '~> 1.7'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.2.0'
-  spec.add_development_dependency 'rubocop', '0.29.1'
+  spec.add_development_dependency 'rubocop', '~> 0.29.0'
 end
