@@ -1,0 +1,8 @@
+- name: create .dir directory
+  type: directory
+  destination: ./examples/.dir
+
+- type: directory
+  group: staff
+  owner: ganmacs
+  destination: ./examples/recipe_file4
