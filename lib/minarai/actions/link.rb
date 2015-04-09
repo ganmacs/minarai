@@ -36,7 +36,7 @@ module Minarai
       end
 
       def abort_with_runtime_error
-        abort "[ERROR] #{runtime_error}"
+        Minarai::Logger.errorr(runtime_error) and abort
       end
 
       def runtime_error

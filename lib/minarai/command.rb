@@ -1,5 +1,7 @@
 require 'slop'
 require 'minarai/loaders/recipe_loader'
+require 'minarai/errors/missing_recipe_path_error.rb'
+require 'minarai/logger'
 
 module Minarai
   class Command
@@ -8,14 +10,16 @@ module Minarai
     end
 
     def call
+      Minarai::Logger.info 'Minarai starting...'
       abort_with_error_message unless recipe.valid?
       recipe.runner.run
+      Minarai::Logger.info 'Minarai finish'
     end
 
     private
 
     def abort_with_error_message
-      abort recipe.errors.map { |error| "Error: #{error}" }.join("\n")
+      Minarai::Logger.error(recipe.errors) and abort
     end
 
     def recipe
@@ -23,7 +27,11 @@ module Minarai
     end
 
     def recipe_path
-      slop_options.arguments[0] or raise Minarai::Errors::MissingRecipePathError
+      slop_options.arguments[0] || (Minarai::Logger.error(recipe_missing_error) and abort)
+    end
+
+    def recipe_missing_error
+      Minarai::Errors::MissingRecipePathError.new
     end
 
     def variable_path

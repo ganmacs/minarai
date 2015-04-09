@@ -32,6 +32,9 @@ Style/GuardClause:
 Style/AndOr:
   Enabled: false
 
+Style/FormatString:
+  Enabled: false
+
 Style/PredicateName:
   NamePrefixBlacklist:
     - is_

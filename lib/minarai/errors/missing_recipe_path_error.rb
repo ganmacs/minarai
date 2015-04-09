@@ -4,7 +4,7 @@ module Minarai
   module Errors
     class MissingRecipePathError  < Base
       def to_s
-        'recipe is required.'
+        'file path of recipe is required'
       end
     end
   end

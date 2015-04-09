@@ -7,12 +7,10 @@ module Minarai
     end
 
     def run
-      puts 'Start minarai...'
       @actions.each do |action|
         action.backend = backend
         action.call
       end
-      puts 'minarai done...'
     end
 
     private

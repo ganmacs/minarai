@@ -8,7 +8,6 @@ module Minarai
       attribute :source, required: true, type: String
       attribute :owner, type: String
       attribute :group, type: String
-      attribute :state, type: String, default: ''
 
       def call
         abort_with_runtime_error unless runnable?
@@ -33,7 +32,7 @@ module Minarai
       end
 
       def abort_with_runtime_error
-        abort "[ERROR] #{runtime_error}"
+        Minarai::Logger.errorr(runtime_error) and abort
       end
 
       def runtime_error

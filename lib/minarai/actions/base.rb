@@ -2,6 +2,7 @@ require 'active_model'
 require 'validator/required_validator'
 require 'validator/type_validator'
 require 'minarai/errors/attribute_validation_error'
+require 'minarai/logger'
 
 module Minarai
   module Actions
@@ -25,20 +26,16 @@ module Minarai
       end
 
       def call
-        puts '***************************'
-        puts "[START] #{name}..."
-
-
         if complete?
-          puts "[SKIP] #{name}"
+          Minarai::Logger.skip "[SKIP] #{name}"
         else
           run
-          status = complete? ? 'DONE' : 'FAIL'
-          puts "[#{status}] #{name}"
+          if complete?
+            Minarai::Logger.done "[DONE] #{name}"
+          else
+            Minarai::Logger.fail "[FAIL] #{name}"
+          end
         end
-
-        puts '***************************'
-        puts
       end
 
       def run
@@ -78,7 +75,6 @@ module Minarai
         run_command(*args).success?
       end
 
-      # なまえ
       def run_specific_command(method, *args)
         run_command(backend.command.get(method, *args))
       end
