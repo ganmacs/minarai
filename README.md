@@ -1,5 +1,6 @@
 # Minarai
 [![Build Status](https://travis-ci.org/ganmacs/minarai.svg?branch=master)](https://travis-ci.org/ganmacs/minarai)
+[![Code Climate](https://codeclimate.com/github/ganmacs/minarai/badges/gpa.svg)](https://codeclimate.com/github/ganmacs/minarai)
 
 Configuration-Management Tool
 
