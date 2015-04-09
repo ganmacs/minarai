@@ -5,7 +5,7 @@ require 'minarai/actions/unknown'
 describe Minarai::ActionBuilder do
   describe '#build' do
     context 'when valid action type recieved' do
-      subject { described_class.new('type' => 'git').build}
+      subject { described_class.new('type' => 'git').build }
       it 'return valid ActionType' do
         is_expected.to be_a Minarai::Actions::Git
       end
