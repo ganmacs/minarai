@@ -1,5 +1,4 @@
 require 'minarai/actions/base'
-require 'minarai/errors/attribute_validation_error'
 
 module Minarai
   module Actions
