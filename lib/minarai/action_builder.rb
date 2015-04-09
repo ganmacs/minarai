@@ -4,7 +4,7 @@ require 'minarai/actions/file'
 require 'minarai/actions/homebrew'
 require 'minarai/actions/homebrew_cask'
 require 'minarai/actions/link'
-require 'minarai/actions/unknow'
+require 'minarai/actions/unknown'
 require 'minarai/actions/directory'
 require 'minarai/actions/url_get'
 
