@@ -56,7 +56,7 @@ module Minarai
       private
 
       def logger_device
-        @logger_device || STDOUT
+        @logger_device || $stdout
       end
 
       def create_logger
