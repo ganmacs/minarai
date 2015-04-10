@@ -2,6 +2,10 @@
   type: homebrew
   item: vim
 
+- name: create tmp directory
+  type: directory
+  destination: <%= tmp_dir %>
+
 - name: clone dotfile
   type: git
   repository: <%= remote_dotfile_repo %>

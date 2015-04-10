@@ -1,4 +1,5 @@
 remote_dotfile_repo: git@github.com:ganmacs/dotfiles.git
+tmp_dir: /Users/ganmacs/tmp
 dotfile_path: /Users/ganmacs/tmp/dotfile
 vim_config_in_dotfile: /Users/ganmacs/tmp/dotfile/vim/vimrc
 dot_vim_path: /Users/ganmacs/tmp/.vim
