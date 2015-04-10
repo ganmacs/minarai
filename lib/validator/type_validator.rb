@@ -5,9 +5,13 @@ class TypeValidator < ActiveModel::EachValidator
     super.merge(allow_nil: true)
   end
 
+  def klasses
+    options[:in] || [options[:with]]
+  end
+
   def validate_each(record, attribute, value)
-    unless value.is_a?(options[:with])
-      record.errors.add(attribute, "must be a #{options[:with]}, not #{value.class}")
+    unless klasses.any? { |klass| value.is_a?(klass) }
+      record.errors.add(attribute, "must be a #{klasses}, not #{value.class}")
     end
   end
 end

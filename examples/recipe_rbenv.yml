@@ -1,0 +1,4 @@
+- name: install ruby 2.3.0-dev
+  type: rbenv
+  version: 2.3.0-dev
+  global: true

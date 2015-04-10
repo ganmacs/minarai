@@ -7,6 +7,7 @@ require 'minarai/actions/link'
 require 'minarai/actions/unknown'
 require 'minarai/actions/directory'
 require 'minarai/actions/url_get'
+require 'minarai/actions/rbenv'
 
 module Minarai
   class ActionBuilder
