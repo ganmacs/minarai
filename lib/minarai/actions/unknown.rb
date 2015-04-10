@@ -1,5 +1,5 @@
 require 'minarai/actions/base'
-require 'minarai/errors/invalid_action_type_error'
+require 'minarai/errors/unknown_action_type_error'
 
 module Minarai
   module Actions
@@ -9,7 +9,7 @@ module Minarai
       end
 
       def error_messages
-        [Minarai::Errors::InvalidActionTypeError.new(name)]
+        [Minarai::Errors::UnknownActionTypeError.new(type)]
       end
 
       private
