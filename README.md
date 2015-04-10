@@ -44,13 +44,14 @@ $ minarai RECIPE [--variable=VARIABLE_PATH]
 
 ## Action type
 
+* git
+* file
+* link
+* rbenv
+* url_get
 * hoembrew
 * directory
-* file
-* git
 * hoembrew_cask
-* link
-* url_get
 
 ## recipe
 
